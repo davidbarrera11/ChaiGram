@@ -18,6 +18,8 @@
 		66514BB92A3BDB700002E5D8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66514BB72A3BDB700002E5D8 /* LoginViewController.xib */; };
 		66514BBC2A3BDB7F0002E5D8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66514BBA2A3BDB7F0002E5D8 /* HomeViewController.swift */; };
 		66514BBD2A3BDB7F0002E5D8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66514BBB2A3BDB7F0002E5D8 /* HomeViewController.xib */; };
+		66514BC12A3BFCA00002E5D8 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66514BC02A3BFCA00002E5D8 /* RegisterRequest.swift */; };
+		66514BC32A3BFCB10002E5D8 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66514BC22A3BFCB10002E5D8 /* RegisterResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		66514BB72A3BDB700002E5D8 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		66514BBA2A3BDB7F0002E5D8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		66514BBB2A3BDB7F0002E5D8 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		66514BC02A3BFCA00002E5D8 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		66514BC22A3BFCB10002E5D8 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		66514BAB2A3BDB1A0002E5D8 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				66514BBF2A3BFC410002E5D8 /* Models */,
 				66514BB22A3BDB610002E5D8 /* RegisterViewController.swift */,
 				66514BB32A3BDB610002E5D8 /* RegisterViewController.xib */,
 			);
@@ -128,6 +133,15 @@
 				66514BBB2A3BDB7F0002E5D8 /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		66514BBF2A3BFC410002E5D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66514BC02A3BFCA00002E5D8 /* RegisterRequest.swift */,
+				66514BC22A3BFCB10002E5D8 /* RegisterResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +220,9 @@
 			files = (
 				66514BBC2A3BDB7F0002E5D8 /* HomeViewController.swift in Sources */,
 				66514BB82A3BDB700002E5D8 /* LoginViewController.swift in Sources */,
+				66514BC12A3BFCA00002E5D8 /* RegisterRequest.swift in Sources */,
 				66514BB42A3BDB610002E5D8 /* RegisterViewController.swift in Sources */,
+				66514BC32A3BFCB10002E5D8 /* RegisterResponse.swift in Sources */,
 				66514B952A3BDA8F0002E5D8 /* AppDelegate.swift in Sources */,
 				66514BB02A3BDB4B0002E5D8 /* WelcomeViewController.swift in Sources */,
 			);
