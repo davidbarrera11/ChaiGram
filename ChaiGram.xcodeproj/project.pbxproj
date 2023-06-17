@@ -20,6 +20,9 @@
 		66514BBD2A3BDB7F0002E5D8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66514BBB2A3BDB7F0002E5D8 /* HomeViewController.xib */; };
 		66514BC12A3BFCA00002E5D8 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66514BC02A3BFCA00002E5D8 /* RegisterRequest.swift */; };
 		66514BC32A3BFCB10002E5D8 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66514BC22A3BFCB10002E5D8 /* RegisterResponse.swift */; };
+		6665EC482A3D24BE0076E6AE /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665EC472A3D24BE0076E6AE /* Endpoints.swift */; };
+		6665EC4B2A3D274B0076E6AE /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665EC4A2A3D274B0076E6AE /* LoginResponse.swift */; };
+		6665EC4E2A3D4FA70076E6AE /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665EC4D2A3D4FA70076E6AE /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		66514BBB2A3BDB7F0002E5D8 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		66514BC02A3BFCA00002E5D8 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		66514BC22A3BFCB10002E5D8 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		6665EC472A3D24BE0076E6AE /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		6665EC4A2A3D274B0076E6AE /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		6665EC4D2A3D4FA70076E6AE /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		66514B932A3BDA8F0002E5D8 /* ChaiGram */ = {
 			isa = PBXGroup;
 			children = (
+				6665EC462A3D24A70076E6AE /* Shared */,
 				66514BA92A3BDAD70002E5D8 /* Screens */,
 				66514BA82A3BDAC30002E5D8 /* Config */,
 				66514B9D2A3BDA900002E5D8 /* Assets.xcassets */,
@@ -101,6 +108,7 @@
 		66514BAA2A3BDB110002E5D8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				6665EC492A3D27260076E6AE /* Models */,
 				66514BB62A3BDB700002E5D8 /* LoginViewController.swift */,
 				66514BB72A3BDB700002E5D8 /* LoginViewController.xib */,
 			);
@@ -129,6 +137,7 @@
 		66514BAD2A3BDB320002E5D8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6665EC4C2A3D4F630076E6AE /* Models */,
 				66514BBA2A3BDB7F0002E5D8 /* HomeViewController.swift */,
 				66514BBB2A3BDB7F0002E5D8 /* HomeViewController.xib */,
 			);
@@ -140,6 +149,30 @@
 			children = (
 				66514BC02A3BFCA00002E5D8 /* RegisterRequest.swift */,
 				66514BC22A3BFCB10002E5D8 /* RegisterResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6665EC462A3D24A70076E6AE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6665EC472A3D24BE0076E6AE /* Endpoints.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		6665EC492A3D27260076E6AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6665EC4A2A3D274B0076E6AE /* LoginResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6665EC4C2A3D4F630076E6AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6665EC4D2A3D4FA70076E6AE /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,10 +253,13 @@
 			files = (
 				66514BBC2A3BDB7F0002E5D8 /* HomeViewController.swift in Sources */,
 				66514BB82A3BDB700002E5D8 /* LoginViewController.swift in Sources */,
+				6665EC4E2A3D4FA70076E6AE /* UserProfile.swift in Sources */,
+				6665EC4B2A3D274B0076E6AE /* LoginResponse.swift in Sources */,
 				66514BC12A3BFCA00002E5D8 /* RegisterRequest.swift in Sources */,
 				66514BB42A3BDB610002E5D8 /* RegisterViewController.swift in Sources */,
 				66514BC32A3BFCB10002E5D8 /* RegisterResponse.swift in Sources */,
 				66514B952A3BDA8F0002E5D8 /* AppDelegate.swift in Sources */,
+				6665EC482A3D24BE0076E6AE /* Endpoints.swift in Sources */,
 				66514BB02A3BDB4B0002E5D8 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

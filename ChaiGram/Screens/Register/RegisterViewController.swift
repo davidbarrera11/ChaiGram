@@ -14,8 +14,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    private var urlRequest = "https://reqres.in/api/register"
-    
     init() {
         super.init(nibName: "RegisterViewController", bundle: .main)
     }
@@ -50,7 +48,7 @@ class RegisterViewController: UIViewController {
     
     func postUser(registerRequest: RegisterRequest){
         
-        guard let url = URL(string: urlRequest) else {
+        guard let url = URL(string: Endpoints.register.url) else {
             return
         }
         
@@ -67,9 +65,13 @@ class RegisterViewController: UIViewController {
             }
             
             do {
+                print(String(data: data, encoding: .utf8))
                 let serializeData = try JSONDecoder().decode(RegisterResponse.self, from: data)
                 DispatchQueue.main.async{
                     self.activityIndicator.stopAnimating()
+                    let homeViewController = HomeViewController(currentUser: registerRequest.username)
+                    homeViewController.modalPresentationStyle = .fullScreen
+                    self.navigationController?.present(homeViewController, animated: true)
                 }
             } catch {
                 print(error)
