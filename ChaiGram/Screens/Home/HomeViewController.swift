@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     
+    private var service: HomeService
+    
     let updateButton = UIButton(type: .custom)
     let namesTextField = UITextField()
     
@@ -46,6 +48,7 @@ class HomeViewController: UIViewController {
     }
     
     init(currentUser: String) {
+        service = HomeService()
         userName = currentUser
         super.init(nibName: "HomeViewController", bundle: .main)
     }
@@ -56,32 +59,17 @@ class HomeViewController: UIViewController {
     
     private func getUserInfo(userName: String) {
         
-        guard let url = URL(string: Endpoints.getUser(user: userName).url) else {
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        
-        request.httpMethod = "GET"        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let task = URLSession.shared.dataTask(with: request) { data, urlResponse, error in
-            guard let data = data else {
-                return
+        service.getUserInfo(userName: userName) { result in
+            switch result {
+            case .success(let userInfo):
+                self.showUserInfo(user: userInfo)
+                break
+            case .failure(let error):
+                Utils.errorMessages(error: error)
+                break
             }
-            
-            do {
-                let serializeData = try JSONDecoder().decode(UserProfile.self, from: data)
-                DispatchQueue.main.async{
-                    self.showUserInfo(user: serializeData)
-                }
-                
-            } catch {
-                print(error)
-            }
-            
         }
-        task.resume()
+          
     }
     
     private func showUserInfo(user: UserProfile) {

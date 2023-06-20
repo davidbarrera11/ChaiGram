@@ -12,7 +12,7 @@ enum Endpoints {
     case login
     case getUser(user: String)
     
-    private var baseUrl: String { "http://192.168.0.25:3000" }
+    private var baseUrl: String { "http://192.168.0.9:3000" }
     
     var url: String {
         

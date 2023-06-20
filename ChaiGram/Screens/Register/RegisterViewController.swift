@@ -14,7 +14,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    private var service: RegisterService
+    
     init() {
+        service = RegisterService()
         super.init(nibName: "RegisterViewController", bundle: .main)
     }
     
@@ -47,38 +50,23 @@ class RegisterViewController: UIViewController {
     }
     
     func postUser(registerRequest: RegisterRequest){
-        
-        guard let url = URL(string: Endpoints.register.url) else {
-            return
-        }
-        
-        activityIndicator.startAnimating()
-        
-        var request = URLRequest(url: url)
-        
-        request.httpMethod = "POST"
-        request.httpBody = try? JSONEncoder().encode(registerRequest)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let task = URLSession.shared.dataTask(with: request) { data, urlResponse, error in
-            guard let data = data else {
-                return
+        self.activityIndicator.startAnimating()
+        service.postUser(request: registerRequest) { result in
+            switch result {
+            case .success(let registerResponse):
+                self.activityIndicator.stopAnimating()
+                let homeViewController = HomeViewController(currentUser: registerRequest.username)
+                homeViewController.modalPresentationStyle = .fullScreen
+                self.navigationController?.present(homeViewController, animated: true)
+                break
+            case .failure(let error):
+                Utils.errorMessages(error: error)
+                break
             }
-            
-            do {
-                print(String(data: data, encoding: .utf8))
-                let serializeData = try JSONDecoder().decode(RegisterResponse.self, from: data)
-                DispatchQueue.main.async{
-                    self.activityIndicator.stopAnimating()
-                    let homeViewController = HomeViewController(currentUser: registerRequest.username)
-                    homeViewController.modalPresentationStyle = .fullScreen
-                    self.navigationController?.present(homeViewController, animated: true)
-                }
-            } catch {
-                print(error)
-            }
-            
         }
-        task.resume()
+       
     }
+    
+   
     
 }

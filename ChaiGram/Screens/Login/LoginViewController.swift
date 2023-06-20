@@ -14,9 +14,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    private let service: LoginServiceProtocol
     private var getRequestURL = ""
 
     init() {
+        service = LoginService()
         super.init(nibName: "LoginViewController", bundle: .main)
     }
     
@@ -49,39 +51,27 @@ class LoginViewController: UIViewController {
     }
     
     func loginUser(loginRequest: RegisterRequest) {
-        guard let url = URL(string: Endpoints.login.url) else {
-            return
-        }
-        
         activityIndicator.startAnimating()
         
-        var request = URLRequest(url: url)
-        
-        request.httpMethod = "POST"
-        request.httpBody = try? JSONEncoder().encode(loginRequest)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let task = URLSession.shared.dataTask(with: request) { data, urlResponse, error in
-            guard let data = data else {
-                return
+        service.login(request: loginRequest) { result in
+            self.activityIndicator.stopAnimating()
+            
+            switch result {
+            case .success(let loginRequest):
+                print(loginRequest.token)
+                break
+            case .failure(let error):
+                Utils.errorMessages(error: error)
+                break
             }
             
-            do {
-                let serializeData = try JSONDecoder().decode(LoginResponse.self, from: data)
-                DispatchQueue.main.async{
-                    self.activityIndicator.stopAnimating()
-                    let homeViewController = HomeViewController(currentUser: loginRequest.username)
-                    homeViewController.modalPresentationStyle = .fullScreen
-                    self.navigationController?.present(homeViewController, animated: true)
-                }
-                
-            } catch {
-                print(error)
-            }
+            let homeViewController = HomeViewController(currentUser: loginRequest.username)
+            homeViewController.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(homeViewController, animated: true)
             
         }
-        task.resume()
-        
     }
+    
+  
 
 }
