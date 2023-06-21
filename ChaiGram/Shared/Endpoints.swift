@@ -11,6 +11,7 @@ enum Endpoints {
     case register
     case login
     case getUser(user: String)
+    case putName
     
     private var baseUrl: String { "http://192.168.0.9:3000" }
     
@@ -23,7 +24,8 @@ enum Endpoints {
             return "\(baseUrl)/autenticacion"
         case .getUser(let user):
             return "\(baseUrl)/profile/\(user)"
-
+        case .putName:
+            return "\(baseUrl)/names"
         }
     }
 }

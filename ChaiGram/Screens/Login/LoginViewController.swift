@@ -65,9 +65,12 @@ class LoginViewController: UIViewController {
                 break
             }
             
+
             let homeViewController = HomeViewController(currentUser: loginRequest.username)
-            homeViewController.modalPresentationStyle = .fullScreen
-            self.navigationController?.present(homeViewController, animated: true)
+            let navController = UINavigationController(rootViewController: homeViewController)
+
+            navController.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(navController, animated: true)
             
         }
     }

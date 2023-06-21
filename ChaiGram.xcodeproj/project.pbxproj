@@ -12,6 +12,12 @@
 		663238182A41257500592B0B /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663238172A41257500592B0B /* HomeService.swift */; };
 		6632381A2A414B1300592B0B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663238192A414B1300592B0B /* Utils.swift */; };
 		6632381C2A414E3300592B0B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632381B2A414E3300592B0B /* API.swift */; };
+		663238202A42724600592B0B /* PutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632381F2A42724600592B0B /* PutResponse.swift */; };
+		663238222A4275A500592B0B /* PutNameBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663238212A4275A500592B0B /* PutNameBody.swift */; };
+		663238262A42966400592B0B /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663238242A42966400592B0B /* GalleryViewController.swift */; };
+		663238272A42966400592B0B /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 663238252A42966400592B0B /* GalleryViewController.xib */; };
+		6632382B2A429B8300592B0B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663238292A429B8300592B0B /* PostTableViewCell.swift */; };
+		6632382C2A429B8300592B0B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6632382A2A429B8300592B0B /* PostTableViewCell.xib */; };
 		66514B952A3BDA8F0002E5D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66514B942A3BDA8F0002E5D8 /* AppDelegate.swift */; };
 		66514B9E2A3BDA900002E5D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66514B9D2A3BDA900002E5D8 /* Assets.xcassets */; };
 		66514BA12A3BDA900002E5D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66514B9F2A3BDA900002E5D8 /* LaunchScreen.storyboard */; };
@@ -36,6 +42,12 @@
 		663238172A41257500592B0B /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		663238192A414B1300592B0B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		6632381B2A414E3300592B0B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6632381F2A42724600592B0B /* PutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutResponse.swift; sourceTree = "<group>"; };
+		663238212A4275A500592B0B /* PutNameBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutNameBody.swift; sourceTree = "<group>"; };
+		663238242A42966400592B0B /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		663238252A42966400592B0B /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
+		663238292A429B8300592B0B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		6632382A2A429B8300592B0B /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		66514B912A3BDA8F0002E5D8 /* ChaiGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaiGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66514B942A3BDA8F0002E5D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66514B9D2A3BDA900002E5D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +87,25 @@
 				663238172A41257500592B0B /* HomeService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		663238232A42964D00592B0B /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				663238282A429B6300592B0B /* Cells */,
+				663238242A42966400592B0B /* GalleryViewController.swift */,
+				663238252A42966400592B0B /* GalleryViewController.xib */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		663238282A429B6300592B0B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				663238292A429B8300592B0B /* PostTableViewCell.swift */,
+				6632382A2A429B8300592B0B /* PostTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		66514B882A3BDA8F0002E5D8 = {
@@ -117,6 +148,7 @@
 		66514BA92A3BDAD70002E5D8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				663238232A42964D00592B0B /* Gallery */,
 				66514BAD2A3BDB320002E5D8 /* Home */,
 				66514BAC2A3BDB290002E5D8 /* Welcome */,
 				66514BAB2A3BDB1A0002E5D8 /* Register */,
@@ -196,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				6665EC4D2A3D4FA70076E6AE /* UserProfile.swift */,
+				6632381F2A42724600592B0B /* PutResponse.swift */,
+				663238212A4275A500592B0B /* PutNameBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +298,8 @@
 				66514BB12A3BDB4B0002E5D8 /* WelcomeViewController.xib in Resources */,
 				66514BB52A3BDB610002E5D8 /* RegisterViewController.xib in Resources */,
 				66514BBD2A3BDB7F0002E5D8 /* HomeViewController.xib in Resources */,
+				663238272A42966400592B0B /* GalleryViewController.xib in Resources */,
+				6632382C2A429B8300592B0B /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +314,8 @@
 				66514BB82A3BDB700002E5D8 /* LoginViewController.swift in Sources */,
 				6665EC4E2A3D4FA70076E6AE /* UserProfile.swift in Sources */,
 				6632381A2A414B1300592B0B /* Utils.swift in Sources */,
+				663238202A42724600592B0B /* PutResponse.swift in Sources */,
+				6632382B2A429B8300592B0B /* PostTableViewCell.swift in Sources */,
 				6632381C2A414E3300592B0B /* API.swift in Sources */,
 				6665EC4B2A3D274B0076E6AE /* LoginResponse.swift in Sources */,
 				66514BC12A3BFCA00002E5D8 /* RegisterRequest.swift in Sources */,
@@ -285,8 +323,10 @@
 				663238162A41255700592B0B /* RegisterService.swift in Sources */,
 				663238142A41252F00592B0B /* LoginService.swift in Sources */,
 				663238182A41257500592B0B /* HomeService.swift in Sources */,
+				663238222A4275A500592B0B /* PutNameBody.swift in Sources */,
 				66514BC32A3BFCB10002E5D8 /* RegisterResponse.swift in Sources */,
 				66514B952A3BDA8F0002E5D8 /* AppDelegate.swift in Sources */,
+				663238262A42966400592B0B /* GalleryViewController.swift in Sources */,
 				6665EC482A3D24BE0076E6AE /* Endpoints.swift in Sources */,
 				66514BB02A3BDB4B0002E5D8 /* WelcomeViewController.swift in Sources */,
 			);

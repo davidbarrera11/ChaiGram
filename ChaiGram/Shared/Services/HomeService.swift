@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeServiceProtocol {
     func getUserInfo(userName: String, callback: @escaping (Result<UserProfile, ServiceError>) -> Void)
+    func putUser(request: PutNameBody, callback: @escaping (Result<PutResponse, ServiceError>) -> Void)
 }
 
 enum ServiceError: Error {
@@ -30,6 +31,31 @@ final class HomeService: HomeServiceProtocol {
                 case.success(let data):
                     do {
                         let serializeData = try JSONDecoder().decode(UserProfile.self, from: data)
+                        DispatchQueue.main.async{
+                            callback(.success(serializeData))
+                        }
+                        
+                    } catch {
+                        print(error)
+                    }
+                    break
+                case.failure(let failure):
+                    callback(.failure(failure))
+                }
+            }
+    }
+    
+    func putUser(request: PutNameBody, callback: @escaping (Result<PutResponse, ServiceError>) -> Void) {
+        API.execute(
+            url: Endpoints.putName.url,
+            method: .put,
+            headers: [.contentType:.applicationJson],
+            data: request
+        ) { userInfo in
+                switch(userInfo) {
+                case.success(let data):
+                    do {
+                        let serializeData = try JSONDecoder().decode(PutResponse.self, from: data)
                         DispatchQueue.main.async{
                             callback(.success(serializeData))
                         }

@@ -7,13 +7,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var photoImageView: UIImageView!
     
     private var service: HomeService
+    private var images = [UIImage]()
     
     let updateButton = UIButton(type: .custom)
     let namesTextField = UITextField()
@@ -57,6 +59,21 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            return
+        }
+        
+        photoImageView.image = image
+        images.append(image)
+    }
+    
     private func getUserInfo(userName: String) {
         
         service.getUserInfo(userName: userName) { result in
@@ -72,12 +89,55 @@ class HomeViewController: UIViewController {
           
     }
     
+    @IBAction func logoutClick() {
+        let welcomeViewController = WelcomeViewController()
+        welcomeViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(welcomeViewController, animated: true)
+    }
+    
+    @IBAction func activateCamera() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+    
+    @IBAction func openGallery() {
+        let galleryViewController = GalleryViewController(datasource: images)
+        galleryViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(galleryViewController, animated: true)
+    }
+    
     private func showUserInfo(user: UserProfile) {
         userLabel.text = user.username
         emailLabel.text = user.email
     }
     
     @objc private func updateButtonClick() {
-        print("Me manosearon")
+        
+        guard let user = userLabel.text else {
+            return
+        }
+        
+        guard let names = namesTextField.text else {
+            return
+        }
+        
+        let request = PutNameBody(username: user, names: names)
+        putUser(putRequest: request)
+    }
+    
+    func putUser(putRequest: PutNameBody){
+        service.putUser(request: putRequest) { result in
+            switch result {
+            case .success(let registerResponse):
+                print(registerResponse)
+                break
+            case .failure(let error):
+                Utils.errorMessages(error: error)
+                break
+            }
+        }
+       
     }
 }

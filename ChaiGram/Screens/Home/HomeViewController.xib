@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ChaiGram" customModuleProvider="target">
             <connections>
                 <outlet property="emailLabel" destination="CHk-zc-aMC" id="RNt-1O-nT1"/>
+                <outlet property="photoImageView" destination="k2q-gq-6gS" id="iot-Me-S8J"/>
                 <outlet property="stackView" destination="x5R-Rk-2Zt" id="vhf-4E-6oN"/>
                 <outlet property="userLabel" destination="nag-4Q-rCw" id="Xqi-ap-He9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,6 +34,9 @@
                     <buttonConfiguration key="configuration" style="filled" title="Logout">
                         <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="logoutClick" destination="-1" eventType="touchUpInside" id="ay9-t6-Kae"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="x5R-Rk-2Zt">
                     <rect key="frame" x="90" y="269" width="234" height="77"/>
@@ -73,16 +77,44 @@
                         </stackView>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4o-YU-XjL">
+                    <rect key="frame" x="165.5" y="650.5" width="83" height="34.5"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Camara"/>
+                    <connections>
+                        <action selector="activateCamera" destination="-1" eventType="touchUpInside" id="eol-Ys-Ui1"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2q-gq-6gS">
+                    <rect key="frame" x="96" y="116.5" width="223" height="127.5"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOX-Uy-5B5">
+                    <rect key="frame" x="169" y="710" width="78" height="34.5"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Gallery"/>
+                    <connections>
+                        <action selector="openGallery" destination="-1" eventType="touchUpInside" id="YAb-Fi-mX6"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="05g-cQ-Qw1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="E5n-mu-kzh"/>
+                <constraint firstItem="k2q-gq-6gS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="96" id="Mj5-WF-bC2"/>
                 <constraint firstItem="x5R-Rk-2Zt" firstAttribute="top" secondItem="05g-cQ-Qw1" secondAttribute="bottom" constant="172.5" id="Mqe-2o-fe8"/>
+                <constraint firstItem="N4o-YU-XjL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NzY-XZ-fbP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k2q-gq-6gS" secondAttribute="trailing" constant="95" id="Rox-nP-HyO"/>
+                <constraint firstItem="xOX-Uy-5B5" firstAttribute="top" secondItem="N4o-YU-XjL" secondAttribute="bottom" constant="25" id="aZn-tb-3Pj"/>
+                <constraint firstItem="x5R-Rk-2Zt" firstAttribute="top" secondItem="k2q-gq-6gS" secondAttribute="bottom" constant="25" id="bJR-KF-S5D"/>
                 <constraint firstItem="x5R-Rk-2Zt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="90" id="eJm-e0-tGW"/>
+                <constraint firstItem="k2q-gq-6gS" firstAttribute="top" secondItem="05g-cQ-Qw1" secondAttribute="bottom" constant="20" id="esc-Xf-lRX"/>
                 <constraint firstItem="9pP-Gh-yh5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="i55-bp-7Aa"/>
                 <constraint firstItem="05g-cQ-Qw1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jg8-Zf-TxB"/>
+                <constraint firstItem="xOX-Uy-5B5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="169" id="mHV-hn-25Z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xOX-Uy-5B5" secondAttribute="trailing" constant="167" id="pJr-Fl-ooI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x5R-Rk-2Zt" secondAttribute="trailing" constant="90" id="qS3-T3-D51"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="N4o-YU-XjL" secondAttribute="bottom" constant="177" id="u5U-PG-HUZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9pP-Gh-yh5" secondAttribute="bottom" constant="240" id="zIM-7X-Xn1"/>
             </constraints>
             <point key="canvasLocation" x="139.13043478260872" y="20.089285714285712"/>

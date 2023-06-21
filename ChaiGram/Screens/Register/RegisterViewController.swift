@@ -56,8 +56,11 @@ class RegisterViewController: UIViewController {
             case .success(let registerResponse):
                 self.activityIndicator.stopAnimating()
                 let homeViewController = HomeViewController(currentUser: registerRequest.username)
-                homeViewController.modalPresentationStyle = .fullScreen
-                self.navigationController?.present(homeViewController, animated: true)
+                let navController = UINavigationController(rootViewController: homeViewController)
+
+                navController.modalPresentationStyle = .fullScreen
+                self.navigationController?.present(navController, animated: true)
+                
                 break
             case .failure(let error):
                 Utils.errorMessages(error: error)
