@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Lottie
+import SideMenu
 
 class WelcomeViewController: UIViewController {
+    
+    @IBOutlet weak var animationView: LottieAnimationView!
     
     init() {
         super.init(nibName: "WelcomeViewController", bundle: .main)
@@ -19,7 +23,9 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        welcomeSetUp()
         title = " "
+        
     }
     
     @IBAction func loginButtonClick(_ sender: Any) {
@@ -31,4 +37,18 @@ class WelcomeViewController: UIViewController {
         let registerViewController = RegisterViewController()
         navigationController?.pushViewController(registerViewController, animated: true)
     }
+    
+    @IBAction func showMenu(_ sender: Any) {
+        let menu = SideMenuNavigationController(rootViewController: MenuViewController())
+        menu.leftSide = true
+        present(menu, animated: true, completion: nil)
+    }
+    
+    private func welcomeSetUp() {
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.5
+        animationView.play()
+    }
+    
 }

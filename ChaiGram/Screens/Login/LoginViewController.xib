@@ -4,13 +4,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="ChaiGram" customModuleProvider="target">
             <connections>
-                <outlet property="activityIndicator" destination="sz9-i6-Omw" id="vTD-Pe-oGZ"/>
                 <outlet property="emailTextField" destination="goS-Yu-nDg" id="Bok-Ei-oFE"/>
+                <outlet property="loadingAnimation" destination="EzM-uY-uwE" id="6OG-Gq-MTV"/>
                 <outlet property="passwordTextField" destination="jLm-vs-NX4" id="mPA-kU-xdI"/>
                 <outlet property="userTextField" destination="wYa-KS-EkG" id="iPx-g5-eF4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -39,9 +40,6 @@
                         <action selector="loginButtonClick:" destination="-1" eventType="touchUpInside" id="U4i-kS-tJi"/>
                     </connections>
                 </button>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sz9-i6-Omw">
-                    <rect key="frame" x="188.5" y="465" width="37" height="37"/>
-                </activityIndicatorView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1fK-Z6-buC">
                     <rect key="frame" x="25" y="271.5" width="364" height="132"/>
                     <subviews>
@@ -95,16 +93,24 @@
                         </stackView>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EzM-uY-uwE" customClass="LottieAnimationView" customModule="Lottie">
+                    <rect key="frame" x="115" y="428.5" width="185" height="103.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="laoding"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="sz9-i6-Omw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5vF-gh-tOx"/>
+                <constraint firstItem="EzM-uY-uwE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="40p-53-0Cn"/>
+                <constraint firstItem="ObO-yJ-Ph9" firstAttribute="top" secondItem="EzM-uY-uwE" secondAttribute="bottom" constant="35" id="BPf-iI-HSN"/>
                 <constraint firstItem="1fK-Z6-buC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Fq7-4c-Ob4"/>
                 <constraint firstItem="feK-Yq-ul1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="HBv-FW-5op"/>
                 <constraint firstItem="feK-Yq-ul1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IFA-fk-Z0E"/>
                 <constraint firstItem="ObO-yJ-Ph9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OhO-BB-D0s"/>
-                <constraint firstItem="ObO-yJ-Ph9" firstAttribute="top" secondItem="sz9-i6-Omw" secondAttribute="bottom" constant="65" id="b7B-y6-qZF"/>
+                <constraint firstItem="EzM-uY-uwE" firstAttribute="top" secondItem="1fK-Z6-buC" secondAttribute="bottom" constant="25" id="TKJ-3R-5Qh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1fK-Z6-buC" secondAttribute="trailing" constant="25" id="kj4-nq-U0x"/>
                 <constraint firstItem="1fK-Z6-buC" firstAttribute="top" secondItem="feK-Yq-ul1" secondAttribute="bottom" constant="175" id="uXW-ik-Vhu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ObO-yJ-Ph9" secondAttribute="bottom" constant="250" id="uj3-p4-Eh8"/>
@@ -112,4 +118,9 @@
             <point key="canvasLocation" x="133.33333333333334" y="20.758928571428569"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

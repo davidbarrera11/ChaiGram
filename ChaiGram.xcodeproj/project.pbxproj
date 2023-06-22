@@ -34,9 +34,18 @@
 		6665EC482A3D24BE0076E6AE /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665EC472A3D24BE0076E6AE /* Endpoints.swift */; };
 		6665EC4B2A3D274B0076E6AE /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665EC4A2A3D274B0076E6AE /* LoginResponse.swift */; };
 		6665EC4E2A3D4FA70076E6AE /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665EC4D2A3D4FA70076E6AE /* UserProfile.swift */; };
+		6684AE542A43D27E00D2D012 /* welcome.json in Resources */ = {isa = PBXBuildFile; fileRef = 6684AE532A43D27E00D2D012 /* welcome.json */; };
+		6684AE562A43D5A200D2D012 /* laoding.json in Resources */ = {isa = PBXBuildFile; fileRef = 6684AE552A43D5A200D2D012 /* laoding.json */; };
+		6684AE592A43D81D00D2D012 /* AnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6684AE572A43D81D00D2D012 /* AnimatedViewController.swift */; };
+		6684AE5A2A43D81D00D2D012 /* AnimatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6684AE582A43D81D00D2D012 /* AnimatedViewController.xib */; };
+		6684AE5C2A43D8F400D2D012 /* chaigram.json in Resources */ = {isa = PBXBuildFile; fileRef = 6684AE5B2A43D8F400D2D012 /* chaigram.json */; };
+		6684AE602A43E16600D2D012 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6684AE5E2A43E16600D2D012 /* MenuViewController.swift */; };
+		6684AE612A43E16600D2D012 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6684AE5F2A43E16600D2D012 /* MenuViewController.xib */; };
+		7AAA75BE28512D4B2C32F560 /* libPods-ChaiGram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5136E1F7AD629952F438F6 /* libPods-ChaiGram.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02DA582AB25227D9621996EA /* Pods-ChaiGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaiGram.release.xcconfig"; path = "Target Support Files/Pods-ChaiGram/Pods-ChaiGram.release.xcconfig"; sourceTree = "<group>"; };
 		663238132A41252F00592B0B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		663238152A41255700592B0B /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		663238172A41257500592B0B /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
@@ -66,6 +75,15 @@
 		6665EC472A3D24BE0076E6AE /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		6665EC4A2A3D274B0076E6AE /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		6665EC4D2A3D4FA70076E6AE /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		6684AE532A43D27E00D2D012 /* welcome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = welcome.json; path = ../../../../Downloads/welcome.json; sourceTree = "<group>"; };
+		6684AE552A43D5A200D2D012 /* laoding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = laoding.json; path = ../../../../Downloads/laoding.json; sourceTree = "<group>"; };
+		6684AE572A43D81D00D2D012 /* AnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedViewController.swift; sourceTree = "<group>"; };
+		6684AE582A43D81D00D2D012 /* AnimatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedViewController.xib; sourceTree = "<group>"; };
+		6684AE5B2A43D8F400D2D012 /* chaigram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = chaigram.json; path = ../../../../Downloads/chaigram.json; sourceTree = "<group>"; };
+		6684AE5E2A43E16600D2D012 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		6684AE5F2A43E16600D2D012 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		758EAE153941A1D856395A37 /* Pods-ChaiGram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaiGram.debug.xcconfig"; path = "Target Support Files/Pods-ChaiGram/Pods-ChaiGram.debug.xcconfig"; sourceTree = "<group>"; };
+		7A5136E1F7AD629952F438F6 /* libPods-ChaiGram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChaiGram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +91,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AAA75BE28512D4B2C32F560 /* libPods-ChaiGram.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47F28BC90DB008B3FFF20E02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A5136E1F7AD629952F438F6 /* libPods-ChaiGram.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		663238122A41222D00592B0B /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +140,8 @@
 			children = (
 				66514B932A3BDA8F0002E5D8 /* ChaiGram */,
 				66514B922A3BDA8F0002E5D8 /* Products */,
+				E49E30208127C307E48F8EC0 /* Pods */,
+				47F28BC90DB008B3FFF20E02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +156,7 @@
 		66514B932A3BDA8F0002E5D8 /* ChaiGram */ = {
 			isa = PBXGroup;
 			children = (
+				6684AE522A43D1FE00D2D012 /* Animations */,
 				6665EC462A3D24A70076E6AE /* Shared */,
 				66514BA92A3BDAD70002E5D8 /* Screens */,
 				66514BA82A3BDAC30002E5D8 /* Config */,
@@ -148,6 +178,7 @@
 		66514BA92A3BDAD70002E5D8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				6684AE5D2A43E15100D2D012 /* Sidemenu */,
 				663238232A42964D00592B0B /* Gallery */,
 				66514BAD2A3BDB320002E5D8 /* Home */,
 				66514BAC2A3BDB290002E5D8 /* Welcome */,
@@ -182,6 +213,8 @@
 			children = (
 				66514BAE2A3BDB4B0002E5D8 /* WelcomeViewController.swift */,
 				66514BAF2A3BDB4B0002E5D8 /* WelcomeViewController.xib */,
+				6684AE572A43D81D00D2D012 /* AnimatedViewController.swift */,
+				6684AE582A43D81D00D2D012 /* AnimatedViewController.xib */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -234,6 +267,34 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		6684AE522A43D1FE00D2D012 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				6684AE5B2A43D8F400D2D012 /* chaigram.json */,
+				6684AE552A43D5A200D2D012 /* laoding.json */,
+				6684AE532A43D27E00D2D012 /* welcome.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		6684AE5D2A43E15100D2D012 /* Sidemenu */ = {
+			isa = PBXGroup;
+			children = (
+				6684AE5E2A43E16600D2D012 /* MenuViewController.swift */,
+				6684AE5F2A43E16600D2D012 /* MenuViewController.xib */,
+			);
+			path = Sidemenu;
+			sourceTree = "<group>";
+		};
+		E49E30208127C307E48F8EC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				758EAE153941A1D856395A37 /* Pods-ChaiGram.debug.xcconfig */,
+				02DA582AB25227D9621996EA /* Pods-ChaiGram.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,6 +302,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66514BA52A3BDA900002E5D8 /* Build configuration list for PBXNativeTarget "ChaiGram" */;
 			buildPhases = (
+				96F0FB85B48729B0186D1EEF /* [CP] Check Pods Manifest.lock */,
 				66514B8D2A3BDA8F0002E5D8 /* Sources */,
 				66514B8E2A3BDA8F0002E5D8 /* Frameworks */,
 				66514B8F2A3BDA8F0002E5D8 /* Resources */,
@@ -292,18 +354,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6684AE5A2A43D81D00D2D012 /* AnimatedViewController.xib in Resources */,
 				66514BB92A3BDB700002E5D8 /* LoginViewController.xib in Resources */,
+				6684AE612A43E16600D2D012 /* MenuViewController.xib in Resources */,
 				66514BA12A3BDA900002E5D8 /* LaunchScreen.storyboard in Resources */,
 				66514B9E2A3BDA900002E5D8 /* Assets.xcassets in Resources */,
 				66514BB12A3BDB4B0002E5D8 /* WelcomeViewController.xib in Resources */,
 				66514BB52A3BDB610002E5D8 /* RegisterViewController.xib in Resources */,
+				6684AE542A43D27E00D2D012 /* welcome.json in Resources */,
 				66514BBD2A3BDB7F0002E5D8 /* HomeViewController.xib in Resources */,
+				6684AE5C2A43D8F400D2D012 /* chaigram.json in Resources */,
+				6684AE562A43D5A200D2D012 /* laoding.json in Resources */,
 				663238272A42966400592B0B /* GalleryViewController.xib in Resources */,
 				6632382C2A429B8300592B0B /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		96F0FB85B48729B0186D1EEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChaiGram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		66514B8D2A3BDA8F0002E5D8 /* Sources */ = {
@@ -320,6 +412,7 @@
 				6665EC4B2A3D274B0076E6AE /* LoginResponse.swift in Sources */,
 				66514BC12A3BFCA00002E5D8 /* RegisterRequest.swift in Sources */,
 				66514BB42A3BDB610002E5D8 /* RegisterViewController.swift in Sources */,
+				6684AE602A43E16600D2D012 /* MenuViewController.swift in Sources */,
 				663238162A41255700592B0B /* RegisterService.swift in Sources */,
 				663238142A41252F00592B0B /* LoginService.swift in Sources */,
 				663238182A41257500592B0B /* HomeService.swift in Sources */,
@@ -327,6 +420,7 @@
 				66514BC32A3BFCB10002E5D8 /* RegisterResponse.swift in Sources */,
 				66514B952A3BDA8F0002E5D8 /* AppDelegate.swift in Sources */,
 				663238262A42966400592B0B /* GalleryViewController.swift in Sources */,
+				6684AE592A43D81D00D2D012 /* AnimatedViewController.swift in Sources */,
 				6665EC482A3D24BE0076E6AE /* Endpoints.swift in Sources */,
 				66514BB02A3BDB4B0002E5D8 /* WelcomeViewController.swift in Sources */,
 			);
@@ -462,6 +556,7 @@
 		};
 		66514BA62A3BDA900002E5D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 758EAE153941A1D856395A37 /* Pods-ChaiGram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +585,7 @@
 		};
 		66514BA72A3BDA900002E5D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02DA582AB25227D9621996EA /* Pods-ChaiGram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -6,22 +6,23 @@
 //
 
 import Foundation
-
 final class Utils {
-    static func errorMessages(error: ServiceError) {
+    static func errorMessages(error: ServiceError) -> String {
+        let message: String
         switch error {
         case .invalidCode:
-            print("Codigo invalido")
+            message = "Codigo invalido"
             break
         case .serverError:
-            print("Error con el servidor")
+            message = "Error con el servidor"
             break
         case .invalidData:
-            print("Problema con los datos enviados")
+            message = "Problema con los datos enviados"
             break
         case .invalidResponse:
-            print("Problema con la respuesta del servidor")
+            message = "Problema con la respuesta del servidor"
             break
         }
+        return message
     }
 }
